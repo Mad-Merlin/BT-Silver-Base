@@ -16,18 +16,43 @@ label __init_variables:
     return
 
 
+label wardrobe:
+    call update_wardrobe_lists
+    call reset_wardrobe_vars
+    call her_main("",xpos=425)
+    hide screen main_menu_01
+    call screen wardrobe
+
 label reset_wardrobe_vars:
     $ wardrobe_active = 1                 #1=True #hides dissolve from "her_main"
     $ wardrobe_page = 0                   #default page
+    $ wardrobe_stockings_category = 0     #default page
     $ wardrobe_accessories_category = 0   #default page
     $ wardrobe_gifts_category = 0         #default page
     return
 
+label hide_wardrobe:
+    call ctc_wPause
+    call screen wardrobe
 
 label close_wardrobe:
-    $ hermione_xpos = 510 #Hermione position reset when closing inventory.
-    call her_main("","body_01") #reset hermione face to default
+    call her_main("","body_01",xpos=510) #reset hermione face and position to default
     jump day_time_requests
+
+
+label wardrobe_chitchat_toggle:
+    hide screen hermione_main
+    if wardrobe_chitchat_active:
+        ">This will skip most of the wardrobe dialogue. >Not recommended for your first play-through!"
+        menu:
+            "-Disable Wardrobe Chit-Chat-":
+                $ wardrobe_chitchat_active = False
+                call wardrobe
+            "-Back-":
+                pass
+    else:
+        $ wardrobe_chitchat_active = True
+    call wardrobe
 
 
 ### Hair ###
