@@ -82,6 +82,25 @@ label her_top_toggle:
     show screen hermione_main
     call screen wardrobe
 
+# Top Selection #
+label set_h_top(top = ""):
+    if wardrobe_active == 1: #1=True #No dissolve
+        hide screen hermione_main
+        $ h_top = top[-1:]
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+    else:
+        hide screen hermione_main
+        with d5
+        $ h_top = top[-1:]
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+    return
+
+
 ## Bottoms ##
 
 # Bottom Toggle #
@@ -94,6 +113,25 @@ label her_bottom_toggle:
     call update_her_uniform
     show screen hermione_main
     call screen wardrobe
+
+# Bottom Selection #
+label set_h_skirt(skirt = ""):
+    if wardrobe_active == 1: #1=True #No dissolve
+        hide screen hermione_main
+        $ h_skirt = skirt
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+    else:
+        hide screen hermione_main
+        with d5
+        $ h_skirt = skirt
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+    return
+
 
 
 ## Stockings ##
