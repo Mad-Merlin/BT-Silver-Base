@@ -43,6 +43,9 @@ screen wardrobe:
         hotspot (742+280,10,42,41) clicked [SetVariable("wardrobe_page",0),Jump("close_wardrobe")]    #Close Wardrobe and set to default.
         text "Hermione Granger" xpos 720 ypos 72 size 18
         text "Toggle" xpos 668 ypos 129 size 12 
+        text "Wardrobe" xpos 668 ypos 154+360 size 12
+
+        hotspot (993,10,32,23) clicked Jump("hide_wardrobe")
 
         
         ## Page Specific Hotspots ##
