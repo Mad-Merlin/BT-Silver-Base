@@ -4,6 +4,15 @@ label __init_variables:
     if not hasattr(renpy.store,'wardrobe_active'): #important!
         $ wardrobe_active = 0
 
+    if not hasattr(renpy.store,'wardrobe_chitchat_active'): #important!
+        $ wardrobe_chitchat_active = True
+
+    if not hasattr(renpy.store,'wardrobe_page'): #important!
+        $ wardrobe_page = 0
+
+    if not hasattr(renpy.store,'wardrobe_stockings_category'): #important!
+        $ wardrobe_stockings_category = 0
+
     if not hasattr(renpy.store,'wardrobe_page'): #important!
         $ wardrobe_page = 0
 
@@ -19,15 +28,32 @@ label __init_variables:
 label reset_wardrobe_vars:
     $ wardrobe_active = 1                 #1=True #hides dissolve from "her_main"
     $ wardrobe_page = 0                   #default page
+    $ wardrobe_stockings_category = 0     #default page
     $ wardrobe_accessories_category = 0   #default page
     $ wardrobe_gifts_category = 0         #default page
     return
 
 
 label close_wardrobe:
-    $ hermione_xpos = 510 #Hermione position reset when closing inventory.
-    call her_main("","body_01") #reset hermione face to default
+    call her_main("","body_01",xpos=510) #reset hermione face and position to default
     jump day_time_requests
+
+
+label wardrobe_chitchat_toggle:
+    hide screen hermione_main
+    if wardrobe_chitchat_active:
+        ">This will skip most of the wardrobe dialogue. >Not recommended for your first play-through!"
+        menu:
+            "-Disable Wardrobe Chit-Chat-":
+                $ wardrobe_chitchat_active = False
+                show screen hermione_main
+                call screen wardrobe
+            "-Back-":
+                pass
+    else:
+        $ wardrobe_chitchat_active = True
+    show screen hermione_main
+    call screen wardrobe
 
 
 ### Hair ###
