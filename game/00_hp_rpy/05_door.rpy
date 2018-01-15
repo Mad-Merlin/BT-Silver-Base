@@ -364,14 +364,7 @@ label door:
                             jump silver_requests
                     
                     "-Inventory-":
-
-                        call update_wardrobe_lists
-
-                        call reset_wardrobe_vars
-
-                        call her_main("",xpos=425)
-
-                        call screen wardrobe
+                        call wardrobe
 
                         
 #                    "-Ending \"Your whore\"-":
