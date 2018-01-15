@@ -51,14 +51,48 @@ label update_wardrobe_lists:
 
 
 ### Stockings ###
-    $ wr_her_stockings = []
 
-    if "gryffindor_stockings" in cs_existing_stock:
-        $ wr_her_stockings.append("gryffindor_stockings")
-    if "fishnet_stockings" in cs_existing_stock:
-        $ wr_her_stockings.append("fishnet_stockings")
+    $ wr_her_stockings_wool = [] #10 total
+
+    if "gryff_stockings" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("gryff_stockings")
+    if "gryff_stockings_vibe" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("gryff_stockings_vibe")
+    if "gryff_cheer_stockings_short" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("gryff_cheer_stockings_short")
+    if "gryff_cheer_stockings" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("gryff_cheer_stockings")
+    if "gryff_cheer_stockings_vibe" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("gryff_cheer_stockings_vibe")
+
+    if "slyth_stockings" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("slyth_stockings")
+    if "slyth_stockings_vibe" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("slyth_stockings_vibe")
+    if "slyth_cheer_stockings_short" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("slyth_cheer_stockings_short")
+    if "slyth_cheer_stockings" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("slyth_cheer_stockings")
+    if "slyth_cheer_stockings_vibe" in cs_existing_stock:
+        $ wr_her_stockings_wool.append("slyth_cheer_stockings_vibe")
+    #ADD Ravenclaw Blue. And maybe Hufflepuff.
+
+
+    $ wr_her_stockings_lace = []
+
     if "lace_stockings" in cs_existing_stock:
-        $ wr_her_stockings.append("lace_stockings")
+        $ wr_her_stockings_lace.append("lace_stockings")
+
+    $ wr_her_stockings_wicked = []
+
+    if "fishnet_stockings" in cs_existing_stock:
+        $ wr_her_stockings_wicked.append("fishnet_stockings")
+
+    #Pantyhose
+    $ wr_her_pantyhose = []
+
+    #Gloves
+    $ wr_her_gloves = []
 
 
 ### Robes ###
