@@ -24,6 +24,7 @@ label update_wardrobe_lists:
         $ wr_her_tops.append("5")
     if whoring >= 18: #get right number
         $ wr_her_tops.append("6")
+        $ wr_her_tops.remove("3") #remove shirt 3. Looks ugly, no point in having it when she's willing to wear shirt 4.
 
 
 ### Bottoms ###
