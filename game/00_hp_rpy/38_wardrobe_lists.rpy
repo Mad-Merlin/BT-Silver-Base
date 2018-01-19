@@ -82,6 +82,16 @@ label update_wardrobe_lists:
         $ wr_her_bottoms_uniform.append("uni_skirt_5")
 
     $ wr_her_bottoms_uniform_low = []  #Add low hanging school skirts
+
+    #Skirts Low
+    if whoring >= 0:
+        $ wr_her_bottoms_uniform_low.append("uni_skirt_1_low")
+    if whoring >= 3: #get right number
+        $ wr_her_bottoms_uniform_low.append("uni_skirt_2_low")
+    if whoring >= 6: #get right number
+        $ wr_her_bottoms_uniform_low.append("uni_skirt_3_low")
+    if whoring >= 9: #get right number
+        $ wr_her_bottoms_uniform_low.append("uni_skirt_4_low")
     #if micro_skirt unlocked/purchased:
     #    $ wr_her_bottoms_uniform_low.append("uni_skirt_5_low") #micro skirt
 
