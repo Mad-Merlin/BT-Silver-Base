@@ -916,7 +916,7 @@ screen wardrobe:
                     text "End" xpos 76+360 ypos 140+65+90 size 10
                     text "Event" xpos 76+360 ypos 140+75+90 size 10
                 else:
-                    add "01_hp/23_clothes_store/cs_gui/ball_dress_b.png" xpos 70+370 ypos 116 zoom 0.18
+                    add "01_hp/23_clothes_store/cs_gui/ball_dress_b.png" xpos 70+370 ypos 116+90 zoom 0.18
 
 
         else:
