@@ -35,16 +35,13 @@ label update_wardrobe_lists:
         $ wr_her_tops_fancy.append("fancy_waitress_green")
 
     $ wr_her_tops_wicked = [] #ADD kinky clothing items like leather, fishnet
-    if whoring >= 12: #get right number
+    if whoring >= 18: #get right number
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves_open")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless_open")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves_open")
-    if whoring >= 18: #get right number
-        $ wr_her_tops_wicked.append("wicked_corset")
-        $ wr_her_tops_wicked.append("wicked_corset_with_net")
 
     $ wr_her_tops_normal = [] #ADD Pullovers, Sweaters, Shirts, Muggle Clothing
     if whoring >= 6: #get right number
@@ -52,8 +49,6 @@ label update_wardrobe_lists:
         $ wr_her_tops_normal.append("normal_pullover_sexy")
     if whoring >= 9: #get right number
         $ wr_her_tops_normal.append("normal_purple_sweater")
-        $ wr_her_tops_normal.append("normal_sports")
-        $ wr_her_tops_normal.append("normal_sweater")
 
     $ wr_her_tops_misc = []   #ADD Misc top items
     if whoring >= 9: #get right number
