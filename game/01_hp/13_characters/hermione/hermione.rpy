@@ -176,57 +176,96 @@ label __init_variables:
     if not hasattr(renpy.store,'h_hair_color'           ): #important!
         $ h_hair_color          = 1
     
-    if not hasattr(renpy.store,'hermione_bra'           ): #important!
-        $ hermione_bra          = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
-    if not hasattr(renpy.store,'hermione_panties'       ): #important!
-        $ hermione_panties      = "01_hp/13_characters/hermione/clothes/underwear/base_panties_1.png"
-    $ hermione_panties_overlay  = "01_hp/13_characters/hermione/overlays/00_blank.png"
-    if not hasattr(renpy.store,'hermione_skirt'         ): #important!
-        $ hermione_skirt        = "01_hp/13_characters/hermione/clothes/uniform/skirt_1.png"
-    if not hasattr(renpy.store,'hermione_top'           ): #important!
-        $ hermione_top          = "01_hp/13_characters/hermione/clothes/uniform/top_1.png"
-    
-    if not hasattr(renpy.store,'h_bra'                  ): #important!
-        $ h_bra                 = "base_bra_white_1"
-    if not hasattr(renpy.store,'h_panties'              ): #important!
-        $ h_panties             = "base_panties_1"
-    if not hasattr(renpy.store,'h_skirt'                ): #important!
-        $ h_skirt               = "skirt_1"
-    if not hasattr(renpy.store,'h_top'                  ): #important!
-        $ h_top                 = 1
     if not hasattr(renpy.store,'h_skirt_color'          ): #important!
         $ h_skirt_color         = ""
-    $ hermione_wear_bra         = True
-    $ hermione_wear_panties     = True
-    $ hermione_wear_skirt       = True
-    $ hermione_wear_top         = True
+
+    #Toggle
+    if not hasattr(renpy.store,'hermione_wear_top'): #important!
+        $ hermione_wear_top         = True
+        $ hermione_wear_bra         = True
+        $ hermione_wear_skirt       = True
+        $ hermione_wear_panties     = True
+
+        $ hermione_wear_neckwear    = False
+        $ hermione_wear_belt        = False
+        $ hermione_wear_gloves      = False
+        $ hermione_wear_stockings   = False
+        $ hermione_wear_robe        = False
+
+        $ hermione_badges           = False
     
+    #Toggle Save-State
     if not hasattr(renpy.store,'h_request_wear_top'): #important!
-        $ h_request_wear_top = False
-        $ h_request_wear_bra = False
-        $ h_request_wear_bottom = False
-        $ h_request_wear_panties = False
+        $ h_request_wear_top        = False
+        $ h_request_wear_bra        = False
+        $ h_request_wear_bottom     = False
+        $ h_request_wear_panties    = False
+
+
+    #Init Clothing
+    if not hasattr(renpy.store,'reset_her_clothing'): #important!
+        $ reset_her_clothing        = True
+
+    #Top
+    if not hasattr(renpy.store,'hermione_top') or reset_her_clothing: #important!
+        $ hermione_top              = "01_hp/13_characters/hermione/clothes/uniform/top_1.png"
+        $ h_top                     = "uni_top_1"
+
+
+    #Bottom
+    if not hasattr(renpy.store,'hermione_skirt') or reset_her_clothing: #important!
+        $ hermione_skirt            = "01_hp/13_characters/hermione/clothes/uniform/skirt_1.png"
+        $ h_skirt                   = "uni_skirt_1"
+
+
+    #Underwear
+    if not hasattr(renpy.store,'hermione_bra') or reset_her_clothing: #important!
+        $ hermione_bra              = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
+        $ h_bra                     = "bra_white"
+
+        $ hermione_panties          = "01_hp/13_characters/hermione/clothes/underwear/base_panties_1.png"
+        $ h_panties                 = "panties_white"
+
+        $ h_corset                  = "00_blank"
+        $ h_garterbelt              = "00_blank"
+
+    $ hermione_panties_overlay      = "01_hp/13_characters/hermione/overlays/00_blank.png"
+
+
+    #Other Clothing
+    if not hasattr(renpy.store,'hermione_neckwear') or reset_her_clothing: #important!
+        $ hermione_neckwear         = "01_hp/13_characters/hermione/clothes/neckwear/neck_scarf_gryff.png"
+        $ h_neckwear                = "neck_scarf_gryff"
+
+        $ hermione_belt             = "01_hp/13_characters/hermione/clothes/belts/00_blank.png"
+        $ h_belt                    = "00_blank"
+
+        $ hermione_gloves           = "01_hp/13_characters/hermione/clothes/gloves/gloves_gryff.png"
+        $ h_gloves                  = "gloves_gryff"
+
+        $ hermione_stockings        = "01_hp/13_characters/hermione/clothes/stockings/stockings_gryff.png"
+        $ h_stockings               = "stockings_gryff"
+
+        $ hermione_robe             = "01_hp/13_characters/hermione/clothes/robe/gryff_robe.png"
+        $ h_robe                    = "gryff_robe"
+
+
+    #Accessories
+        $ hermione_badge            = "01_hp/13_characters/hermione/accessories/badges/spew_badge.png"
+        $ h_badge                   = "spew_badge"    
     
-    
-    $ hermione_robe              = "01_hp/13_characters/hermione/clothes/robe/gryff_robe.png"
-    $ hermione_badge             = "01_hp/13_characters/hermione/accessories/badges/spew_badge.png"
-    $ hermione_stockings         = "01_hp/13_characters/hermione/clothes/stockings/00_blank.png"
-    
-    $ h_badge                    = "spew_badge"
-    $ h_stocking                 = "00_blank"
-    
-    $ hermione_wear_robe         = False
-    $ hermione_badges            = False
-    
-    
+        $ hermione_piercings        = []
+        $ hermione_tattoos          = []
+
+    $ reset_her_clothing = False
+
     $ h_breasts                  = "breasts_nipfix"
     $ h_bra_nip_fix              = ["bra_silk_black","bra_lace_turquoise","bra_french_maid", "bra_bikini_string_black", "bra_bikini_string_blue", "bra_leather_black", "underwear_misc_insulating_tape", "underwear_misc_bra_white_ripped", "underwear_misc_heart_pasties", "underwear_misc_seethru_bandeau"]
     
     $ h_bra_top_fix              = ["normal_pullover_sexy", "normal_pullover", "normal_purple_sweater", "uni_top_1", "uni_top_2", "uni_top_3", "uni_top_4", "uni_top_5", "uni_top_6", "uni_top_cheer_gryff_skimpy", "uni_top_cheer_gryff", "uni_top_cheer_slyth_skimpy", "uni_top_cheer_slyth"]
 
     $ h_can_color                = ["A","B"]
-    
-    $ hermione_tattoos           = []
+
     
     if not hasattr(renpy.store,'hermione_perm_expand'): #important!
         $ hermione_perm_expand       = False
